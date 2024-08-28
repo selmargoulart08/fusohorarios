@@ -26,6 +26,9 @@ h1 {
     padding: 10px;
     border-radius: 10px;
     background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 input, button {
@@ -40,4 +43,13 @@ input, button {
 
 input {
     background-color: #444444;
+}
+
+.remove-city {
+    background-color: #ff4444;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px 10px;
 }

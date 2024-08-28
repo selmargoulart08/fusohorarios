@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newClock = document.createElement('div');
                 newClock.className = 'clock';
                 newClock.id = cityId;
-                newClock.innerHTML = `${cityName}: <span></span>`;
+                newClock.innerHTML = `${cityName}: <span></span> <button class="remove-city">Remover</button>`;
                 document.getElementById('clocks').appendChild(newClock);
                 fetch(`https://worldtimeapi.org/api/timezone`)
                     .then(response => response.json())
@@ -45,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                     .catch(error => console.error('Erro ao buscar a lista de fusos horários:', error));
             }
+        }
+    });
+
+    document.getElementById('clocks').addEventListener('click', (event) => {
+        if (event.target.classList.contains('remove-city')) {
+            const clockDiv = event.target.parentElement;
+            clockDiv.remove();
         }
     });
 });
